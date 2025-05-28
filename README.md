@@ -28,16 +28,15 @@ enter password. and keep the password secure.
 
 1. create policy
 
-```{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::<bucket-name>/*"
-        }
-    ]
-}
-
-
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::<bucket-name>/*"
+    }
+  ]
+}`
 
