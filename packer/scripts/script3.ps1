@@ -6,7 +6,7 @@ Import-Module ADFS
 Write-Host "Creating AWS Console relying party trust..."
 
 # Variables
-$displayName = "AWS-Aqeel-console"
+$displayName = "AWS-console"
 $identifier = "https://signin.aws.amazon.com/saml"
 $ssoUrl = "https://signin.aws.amazon.com/saml"
 $groupName = "AWS-AppStream"
@@ -72,7 +72,7 @@ Write-Host "AWS Console trust configured."
 Write-Host "Creating AppStream relying party trust..."
 
 # Variables
-$displayName = "AWS-Aqeel-AppStream"
+$displayName = "AWS-AppStream"
 $identifier = "https://appstream2.us-west-2.aws.amazon.com/saml"
 $ssoUrl = "https://appstream2.us-west-2.aws.amazon.com/saml?stack=mystack&accountId=489994096722"
 $groupName = "AWS-AppStream"
