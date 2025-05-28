@@ -28,7 +28,7 @@ enter password. and keep the password secure.
 
 1. create policy
 
-{
+```{
     "Version": "2012-10-17",
     "Statement": [
         {
@@ -39,7 +39,5 @@ enter password. and keep the password secure.
     ]
 }
 
-2. Create role and attach that policy to it.
-3. Attach the role with packer in file aws.pkr.hcl
 
 
