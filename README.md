@@ -75,17 +75,36 @@ appstream/
 
 
 # How to Use
-1. Build the AMI with Packer
+**Build the AMI with Packer**
 
 cd packer
 1. packer init .
 2. packer validate .
 3. packer build aws.pkr.hcl
 
-2. Deploy Infrastructure with Terraform
+**Deploy Infrastructure with Terraform**
 
 cd terraform
 1. terraform init
 2. terraform plan
 3. terraform apply
 
+
+
+# ADFS & AppStream Integration
+Once the VPC and EC2 instance are created, download the Federation Metadata file:
+
+```https://your-domain-name/FederationMetadata/2007-06/FederationMetadata.xml```  (e.g adfs.groveops.net)
+
+Use this file in modules/iam-samlprovider/ to configure IAM.
+
+**Important:** Note the Identity Provider ARN and Role ARN created. These are used in script3.ps1 (especially in ClaimRule4).
+
+# Access AppStream
+Visit:
+
+```https://your-domain-name/adfs/ls/idpInitiatedSignOn.aspx```
+
+Select AWS Console and sign in.
+
+In a new tab, visit the same link again to log in to AppStream and access the console.

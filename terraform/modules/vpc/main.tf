@@ -98,6 +98,9 @@ resource "aws_route_table_association" "pub-sn2-rt-assoc" {
 }
 
 
+##################
+# DHCP
+#################
 
 resource "aws_vpc_dhcp_options" "custom" {
   domain_name         = var.dhcp_domain_name
@@ -114,21 +117,3 @@ resource "aws_vpc_dhcp_options_association" "custom" {
   depends_on      = [aws_vpc.main-vpc]
 }
 
-
-
-resource "aws_s3_bucket" "adfs_cert_bucket" {
-  bucket = "certificate-for-adfs-ec2instance"
-
-  tags = {
-    Name        = "ADFS Certificate Bucket"
-    Environment = "Production"
-  }
-}
-# Upload an object (local file)
-resource "aws_s3_object" "uploaded_file" {
-  bucket = aws_s3_bucket.adfs_cert_bucket.id
-  key    = "adfs.groveops.net.pfx"                # S3 object key
-  source = "${path.module}/adfs.groveops.net.pfx" # Path to local file
-  # etag   = filemd5("${path.module}/example.txt") # Helps detect changes
-  # content_type = "text/plain"
-}
