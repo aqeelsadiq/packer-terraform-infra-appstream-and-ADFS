@@ -40,4 +40,5 @@ enter password. and keep the password secure.
   ]
 }
 
-2. 
+2. Create role and attach that policy to the role.
+3. attch the role with packer aws.pkr.hcl
