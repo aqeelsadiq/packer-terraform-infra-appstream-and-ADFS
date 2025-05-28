@@ -19,7 +19,7 @@ if ($retryCount -eq $maxRetries) {
 }
 
 # -------------------------------
-# Step 6: Create Users, OU, and Groups
+# Step 5: Create Users, OU, and Groups
 # -------------------------------
 $DomainName = "adfs.groveops.net"
 $DomainDN = "DC=adfs,DC=groveops,DC=net"
@@ -125,7 +125,7 @@ try {
     Write-Warning "Failed to add '$User3' to group '$GroupName': $_"
 }
 # -------------------------------
-# Step 7: Import Certificate for ADFS
+# Step 6: Import Certificate for ADFS
 # -------------------------------
 try {
     $cert = Import-PfxCertificate -FilePath "C:\Users\Administrator\Desktop\adfs.groveops.net.pfx" `
@@ -138,7 +138,7 @@ try {
 }
 
 # -------------------------------
-# Step 8: Configure ADFS
+# Step 7: Configure ADFS
 # -------------------------------
 try {
     $adfsCredential = New-Object System.Management.Automation.PSCredential("ADFS\$User1", $SecurePassword)
@@ -155,7 +155,7 @@ try {
 }
 
 # -------------------------------
-# Step 9: Set SPNs for ADFS Service Account
+# Step 8: Set SPNs for ADFS Service Account
 # -------------------------------
 try {
     setspn -s host/adfs.groveops.net $User1
@@ -168,7 +168,7 @@ try {
 }
 
 # -------------------------------
-# Step 10: Configure IIS HTTPS Binding
+# Step 9: Configure IIS HTTPS Binding
 # -------------------------------
 $siteName = "Default Web Site"
 $certStore = "MY"
@@ -198,7 +198,7 @@ try {
 }
 
 # -------------------------------
-# Step 11: Restart ADFS Service
+# Step 10: Restart ADFS Service
 # -------------------------------
 try {
     Restart-Service adfssrv

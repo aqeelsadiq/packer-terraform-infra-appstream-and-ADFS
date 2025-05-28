@@ -1,3 +1,6 @@
+# -------------------------------
+# Step 1: Install Required Windows Features
+# -------------------------------
 
 Install-WindowsFeature -Name Web-Server -IncludeManagementTools
 Install-WindowsFeature -Name ADFS-Federation -IncludeManagementTools
@@ -19,7 +22,16 @@ Start-Process msiexec.exe -Wait -ArgumentList '/i', "$env:TEMP\AWSCLIV2.msi", '/
 # Update current session PATH so aws command works without restarting
 $env:Path += ";C:\Program Files\Amazon\AWSCLIV2\"
 
+# -------------------------------
+# Step 3: Download ADFS Certificate from S3
+# -------------------------------
+
 aws s3 cp s3://certificate-for-adfs-ec2instance/adfs.groveops.net.pfx C:\Users\Administrator\Desktop\ --region us-west-2
+
+
+# -------------------------------
+# Step 4: Configure Active Directory Domain Services
+# -------------------------------
 
 $DomainName = "adfs.groveops.net"
 $SafeModePassword = ConvertTo-SecureString "Qwerty@123" -AsPlainText -Force
