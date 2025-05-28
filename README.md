@@ -58,6 +58,7 @@ Defines the AMI build:
 
 # Terraform Overview
 **Modules**
+
 vpc/
 1. Provisions VPC, subnets, route tables, and security groups.
 2. Includes SSL certificate file: adfs.groveops.net.pfx.
@@ -77,14 +78,14 @@ appstream/
 1. Build the AMI with Packer
 
 cd packer
-packer init .
-packer validate .
-packer build aws.pkr.hcl
+1. packer init .
+2. packer validate .
+3. packer build aws.pkr.hcl
 
 2. Deploy Infrastructure with Terraform
 
 cd terraform
-terraform init
-terraform plan
-terraform apply
+1. terraform init
+2. terraform plan
+3. terraform apply
 
