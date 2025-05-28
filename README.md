@@ -54,3 +54,37 @@ Defines the AMI build:
 1. script1.ps1: Active Directory domain setup and awscli download.
 2. script2.ps1: create Active Directory Users and group.
 3. script3.ps1: Create relying party trust.
+
+
+# Terraform Overview
+**Modules**
+vpc/
+1. Provisions VPC, subnets, route tables, and security groups.
+2. Includes SSL certificate file: adfs.groveops.net.pfx.
+
+ec2/
+1. Launches EC2 instance using the AMI built by Packer.
+
+iam-samlprovider/
+1. Configures IAM identity provider using FederationMetadata.xml.
+
+appstream/
+1. Deploys AppStream 2.0 fleet and stack.
+2. Integrates with domain-joined EC2.
+
+
+# How to Use
+1. Build the AMI with Packer
+
+cd packer
+packer init .
+packer validate .
+packer build aws.pkr.hcl
+
+2. Deploy Infrastructure with Terraform
+
+cd terraform
+terraform init
+terraform plan
+terraform apply
+
