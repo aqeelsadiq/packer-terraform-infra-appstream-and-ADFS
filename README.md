@@ -12,7 +12,7 @@ This project automates the provisioning of a Windows Server environment with Act
 7. Role for Packer to fetch the certificate from s3.
 
 
-# CERTIFICATE COMMANDS
+# Certificate Commands
 
 1- ```sudo apt install certbot```
 
@@ -42,3 +42,15 @@ enter password. and keep the password secure.
 2. Create role and attach that policy to the role.
 3. attch the role with packer aws.pkr.hcl
 
+# Packer Overview
+**aws.pkr.hcl**
+
+Defines the AMI build:
+1. Starts with a base Windows Server 2022 AMI.
+2. Uses bootstrap_win.txt to enable WinRM.
+3. Runs PowerShell scripts under scripts/.
+
+**Scripts**
+1. script1.ps1: Active Directory domain setup and awscli download.
+2. script2.ps1: create Active Directory Users and group.
+3. script3.ps1: Create relying party trust.
