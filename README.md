@@ -34,7 +34,7 @@ enter password. and keep the password secure.
     {
       "Effect": "Allow",
       "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::<bucket-name>/*"
+      "Resource": "arn:aws:s3:::bucket-name/*"
     }
   ]
 }
