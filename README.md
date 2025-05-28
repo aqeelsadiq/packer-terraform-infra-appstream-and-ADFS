@@ -28,7 +28,7 @@ enter password. and keep the password secure.
 
 1. create policy
 
-```json
+` ```json `
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -38,7 +38,8 @@ enter password. and keep the password secure.
       "Resource": "arn:aws:s3:::<bucket-name>/*"
     }
   ]
-}
+}` ``` `
 
 2. Create role and attach that policy to the role.
 3. attch the role with packer aws.pkr.hcl
+
