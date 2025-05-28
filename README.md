@@ -38,5 +38,6 @@ enter password. and keep the password secure.
       "Resource": "arn:aws:s3:::<bucket-name>/*"
     }
   ]
-}`
+}
 
+2. 
