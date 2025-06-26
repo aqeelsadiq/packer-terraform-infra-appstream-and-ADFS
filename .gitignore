@@ -1,16 +1,16 @@
-# Ignore Terraform state files
-terraform/terraform.tfstate
-terraform/terraform.tfstate.backup
+# # Ignore Terraform state files
+# terraform/terraform.tfstate
+# terraform/terraform.tfstate.backup
 
-# Ignore Terraform variable files if they contain sensitive data
-terraform.tfvars
-*.tfvars
+# # Ignore Terraform variable files if they contain sensitive data
+# terraform.tfvars
+# *.tfvars
 
-# Ignore any .terraform directory.
-.terraform/
-**/.terraform/
+# # Ignore any .terraform directory.
+# .terraform/
+# **/.terraform/
 
-# Ignore certificate and key files
-*.pfx
-*.pem
-*.key
+# # Ignore certificate and key files
+# *.pfx
+# *.pem
+# *.key
