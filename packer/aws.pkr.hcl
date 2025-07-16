@@ -44,9 +44,9 @@ source "amazon-ebs" "windows" {
   # connect to the instance.
   user_data_file = "bootstrap_win.txt"
 
- #vpc_id                 = "vpc-05710ab3630c1b584"
- #subnet_id              = "subnet-08a934d1172f953a2"
- # security_group_id       = "sg-0829da0d20932d7f7"
+ #vpc_id                 = "vpc-"
+ #subnet_id              = "subnet-"
+ # security_group_id       = "sg-"
 }
 
 # https://www.packer.io/docs/provisioners
